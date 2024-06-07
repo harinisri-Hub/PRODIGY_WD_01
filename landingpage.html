@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Navigation Menu</title>
+  <style>
+    /* CSS for the navigation menu */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .navbar li {
+      display: inline;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ffcc00;
+    }
+
+    /* CSS for changing menu color on scroll */
+    .scrolled {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar" id="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <body style="color: blue; font-size: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;">The Landing Page</body>
+  </div>
+
+  <div style="height: 1000px;"> <!-- Just for scrolling purposes -->
+    <p>The Landing Page</p>
+  </div>
+
+  <script>
+    // JavaScript for changing menu color on scroll
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("navbar").classList.add("scrolled");
+      } else {
+        document.getElementById("navbar").classList.remove("scrolled");
+      }
+    }
+  </script>
+</body>
+</html>
